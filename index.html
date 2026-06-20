@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pain, Judgement, Redemption</title>
     
-    <!-- Importazione dei font calligrafico e gotico da Google Fonts -->
+    <!-- Importazione DIRETTA dei font dal web. Non devi scaricare nulla. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -16,24 +16,28 @@
             padding: 0;
             background-color: #050505;
             color: #ffffff;
-            font-family: 'Cinzel', serif; /* Font per il countdown e bottone */
+            font-family: 'Cinzel', serif; /* Font per il timer e il bottone */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
         }
 
         h1 {
-            font-family: 'Great Vibes', cursive; /* Font calligrafico stile cover */
-            font-size: 6rem; /* Molto grande per valorizzare i ghirigori */
-            font-weight: normal;
-            margin-bottom: 10px;
+            /* Richiamo automatico al font gotico stile street/tattoo */
+            font-family: 'Grenze Gotisch', cursive; 
+            font-size: 6rem; 
+            font-weight: 900;
+            margin-bottom: 20px;
             margin-top: 20px;
             color: #e0e0e0;
-            text-shadow: 2px 2px 15px rgba(180, 0, 0, 0.5); /* Alone rosso drammatico */
-            /* Niente uppercase: i font corsivi si rovinano se messi tutti in maiuscolo */
+            text-shadow: 4px 4px 15px rgba(180, 0, 0, 0.7); /* Alone rosso sangue marcato */
+            letter-spacing: 2px;
+            line-height: 1.1;
         }
 
         .image-container {
@@ -76,9 +80,9 @@
             box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
         }
 
-        /* Responsive per dispositivi mobili */
+        /* Adattamento per gli schermi dei telefoni */
         @media (max-width: 600px) {
-            h1 { font-size: 4rem; }
+            h1 { font-size: 3.8rem; }
             #countdown { font-size: 1.5rem; }
             img { width: 300px; }
         }
@@ -89,7 +93,7 @@
     <h1>Pain, Judgement, Redemption.</h1>
 
     <div class="image-container">
-        <!-- Inserisci qui il nome esatto della tua immagine scaricata (es. immagine.jpg o sfondo.png) -->
+        <!-- L'immagine che hai salvato sul tuo PC -->
         <img src="redemption.jpeg" alt="Cover Image">
     </div>
 
@@ -98,7 +102,7 @@
     <a href="https://www.instagram.com/camouflagehero?igsh=eGdpd244M2ZnNjAx" class="btn" target="_blank">Scopri di più</a>
 
     <script>
-        // Imposta la data finale: 14 Maggio 2027 all'01:00:00 di notte
+        // Data finale: 14 Maggio 2027 all'01:00:00 di notte
         const countDownDate = new Date("May 14, 2027 01:00:00").getTime();
 
         const x = setInterval(function() {
@@ -110,7 +114,6 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Aggiunge uno zero davanti ai numeri singoli (es. 09 invece di 9)
             const formatTime = (time) => time < 10 ? "0" + time : time;
 
             document.getElementById("countdown").innerHTML = 
